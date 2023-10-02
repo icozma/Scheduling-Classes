@@ -1,5 +1,8 @@
 # Scheduling-Classes
 
+Repo support for [SSC - how-would-you-design-this-scheduling-classes](https://www.sqlservercentral.com/articles/how-would-you-design-this-scheduling-classes) exercise.
+
+
 ```mermaid
 erDiagram
     Student ||--o{ Course : Enrolls
