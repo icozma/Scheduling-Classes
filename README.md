@@ -3,6 +3,8 @@
 Repo support for [SSC - how-would-you-design-this-scheduling-classes](https://www.sqlservercentral.com/articles/how-would-you-design-this-scheduling-classes) exercise.
 
 
+
+
 ```mermaid
 erDiagram
     Student ||--o{ Course : Enrolls
@@ -22,7 +24,12 @@ erDiagram
         string id
         string name
         string description
+        string time
+        string locationId
+        string courseId
+        string instructorId
     }
+    
     Instructor ||--o{ Course : Teaches
     Instructor {
         string id
@@ -37,6 +44,14 @@ erDiagram
         string name
         string address
         string email
+        string phone
+    }
+
+    Locations }o--|| ClassSchedule : Has
+    Locations {
+        string id
+        string name
+        string address
         string phone
     }
 ```
