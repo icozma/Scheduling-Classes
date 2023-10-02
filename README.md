@@ -54,4 +54,33 @@ erDiagram
         string address
         string phone
     }
+
+    Session }o--|| ClassSchedule : Has
+    Session {
+        string id
+        string name
+        string description
+        string time
+        string locationId
+        string courseId
+        string instructorId
+    }
+
+    Volunteer }o--|| ClassSchedule : Has
+    Volunteer {
+        string id
+        string contactInformationId
+        string courseScheduleId
+    }
+
+    Review }o--|| Course : Has
+    Review {
+        string id
+        string name
+        string description
+        string rating
+        string courseId
+        string conttactInformationId
+    }
+
 ```
