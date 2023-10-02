@@ -47,8 +47,8 @@ erDiagram
         string phone
     }
 
-    Locations }o--|| ClassSchedule : Has
-    Locations {
+    Location }o--|| ClassSchedule : Has
+    Location {
         string id
         string name
         string address
