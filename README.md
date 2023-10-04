@@ -9,7 +9,7 @@ Repo support for [SSC - how-would-you-design-this-scheduling-classes](https://ww
 erDiagram
     Student ||--o{ Course : Enrolls
     Student {
-        string id
+        int id
         string contactInformationId
         string major
     }
