@@ -11,6 +11,7 @@ erDiagram
     Student {
         int id
         int contactInformationId
+        string contactInformationId
         string major
     }
     Course }o--|| ClassSchedule : Includes
