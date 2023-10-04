@@ -10,37 +10,39 @@ erDiagram
     Student ||--o{ Course : Enrolls
     Student {
         int id
+        int contactInformationId
         string contactInformationId
         string major
     }
     Course }o--|| ClassSchedule : Includes
     Course {
-        string id
+        int id
         string name
         string description
     }
     ClassSchedule }o--|| Instructor : TaughtBy
     ClassSchedule {
-        string id
+        int id
+        int locationId
+        int courseId
+        int instructorId
         string name
         string description
         string time
-        string locationId
-        string courseId
-        string instructorId
     }
     
     Instructor ||--o{ Course : Teaches
     Instructor {
-        string id
-        string contactInformationId
+        int id
+        int contactInformationId
         string department
     }
 
     ContactInformation }o--|| Instructor : Has
     ContactInformation }o--|| Student : Has
     ContactInformation {
-        string id
+        int id
+        int userId
         string name
         string address
         string email
@@ -49,7 +51,7 @@ erDiagram
 
     Location }o--|| ClassSchedule : Has
     Location {
-        string id
+        int id
         string name
         string address
         string phone
@@ -57,30 +59,52 @@ erDiagram
 
     Session }o--|| ClassSchedule : Has
     Session {
-        string id
+        int id
+        int locationId
+        int courseId
+        int instructorId
         string name
         string description
         string time
-        string locationId
-        string courseId
-        string instructorId
     }
 
     Volunteer }o--|| ClassSchedule : Has
     Volunteer {
-        string id
-        string contactInformationId
-        string courseScheduleId
+        int id
+        int contactInformationId
+        int courseScheduleId
     }
 
     Review }o--|| Course : Has
     Review {
-        string id
+        int id
+        int userId
+        int courseId
+        int contactInformationId
         string name
         string description
         string rating
-        string courseId
-        string conttactInformationId
+    }
+
+    User }o--|| ContactInformation : Has
+
+    User {
+        int id
+        int contactInformationId
+        string userName
+        string password
+    }
+    UserRegistration }o--|| User : Has
+    UserRegistration {
+        int id
+        int userId
+    }
+
+    CourseRegistrations }o--|| ClassSchedule : Has
+    CourseRegistrations {
+        int id
+        int userId
+        int classScheduleId
     }
 
 ```
